@@ -209,7 +209,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1517356801; // January 31st, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000007d006a402163e");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0xa0afbded94d4be233e191525dc2d467af5c7eab3143c852c3cd549831022aad6"); //343833
@@ -221,17 +221,17 @@ public:
         nDefaultPort = 19335;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1486949366, 293345, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1527617300, 2088581571, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(consensus.hashGenesisBlock == uint256S("0x02e8a98c0495ca194714eb3c74d60ef522761c4fab184b626f2806caf50add7e"));
+        assert(genesis.hashMerkleRoot == uint256S("0xb593bae2258b1aa9dbbf5252f0e845f4d0252cc11cfb4dc738370ba013a77c9d"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("testnet-seed.monalisatools.com", true);
-        vSeeds.emplace_back("seed-b.monalisa.loshan.co.uk", true);
-        vSeeds.emplace_back("dnsseed-testnet.thrasher.io", true);
+       // vSeeds.emplace_back("testnet-seed.monalisatools.com", true);
+       // vSeeds.emplace_back("seed-b.monalisa.loshan.co.uk", true);
+       // vSeeds.emplace_back("dnsseed-testnet.thrasher.io", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -248,15 +248,15 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {2056, uint256S("17748a31ba97afdc9a4f86837a39d287e3e7c7290a08a1d816c5969c78a83289")},
+                {2056, uint256S("02e8a98c0495ca194714eb3c74d60ef522761c4fab184b626f2806caf50add7e")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block a0afbded94d4be233e191525dc2d467af5c7eab3143c852c3cd549831022aad6 (height 343833)
-            1516406749,
-            794057,
-            0.01
+            1527617300,
+            0,
+            0.0
         };
 
     }
